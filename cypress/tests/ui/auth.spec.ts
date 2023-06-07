@@ -5,6 +5,7 @@ const apiGraphQL = `${Cypress.env("apiUrl")}/graphql`;
 
 describe("User Sign-up and Login", function () {
   beforeEach(function () {
+    cy.log('START')
     cy.task("db:seed");
 
     cy.intercept("POST", "/users").as("signup");
